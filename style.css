@@ -13,7 +13,7 @@ body {
     width: 100%;
 }
 
-section {
+nav, main {
     padding: 20px 40px;
 }
 
@@ -85,6 +85,7 @@ button {
     background-color: #ff328f;
     color: white;
     border-bottom: none;
+    transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -154,6 +155,7 @@ button {
     border: 1px solid #6030b1;
     padding: 16px 24px;
     border-radius: 50px;
+    transition: background-color 0.3s ease;
 }
 
 .input__btn:hover {

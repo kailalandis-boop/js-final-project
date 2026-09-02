@@ -5,65 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Rental Platform | Blinker.com.us</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
     <script src="https://kit.fontawesome.com/1198d077a4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section id="nav">
+    <nav>
        <div class="nav__container">
             <div class="nav__row">
                 <div class="nav__logo">
-                    <img class="logo" src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/blinker-icon.4f9b2663.png" alt="logo">
+                    <img class="logo" src="./assets/blinker_logo.png" alt="blinker logo">
                 </div>
                 <div class="nav__links">
                     <a class="nav__link" href="#landing__page">Home</a>
-                    <a class="nav__link" href="#">Reserve a Vehicle</a>
+                    <a class="nav__link" href="#">Find Your Car</a>
                     <a class="nav__link nav__link--primary" href="#footer">Contact</a>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="landing__page">
-        <div class="landing__page--container">
-            <div class="landing__page--row">
-                <div class="landing__page--content">
-                    <h1 class="landing__page--title">America's most awarded car rental platform</h1>
-                    <p class="landing__page--para">Reserve a car with <span class="purple">BLINKER</span></p>
-                </div>
-                <div class="input__wrapper">
-                    <input type="text" class="input" placeholder="Search by Make or Model">
-                    <button class="input__btn">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <select id="filter">
-                        <option value="NEW TO OLD">Newest to Oldest</option>
-                        <option value="OLD TO NEW">Oldest to Newest</option>
-                        <option value="A TO Z">Alphabetical, A to Z</option>
-                        <option value="Z TO A">Alphabetical, Z to A</option>
-                    </select>
-                </div>
-                <div class="landing__page--img">
-                    <img src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/building.681ea6bf.png" alt="building">
+    </nav>
+    <main>
+        <section id="landing__page">
+            <div class="landing__page--container">
+                <div class="landing__page--row">
+                    <div class="landing__page--content">
+                        <h1 class="landing__page--title">America's most awarded car rental platform</h1>
+                        <p class="landing__page--para">Reserve a car with <span class="purple">BLINKER</span></p>
+                    </div>
+                    <div class="input__wrapper">
+                        <input type="text" class="input" placeholder="Search" aria-label="Search by Make or Model">
+                        <button class="input__btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <select id="filter" aria-label="Filter Options">
+                            <option value="NEW TO OLD">Newest to Oldest</option>
+                            <option value="OLD TO NEW">Oldest to Newest</option>
+                            <option value="A TO Z">Alphabetical, A to Z</option>
+                            <option value="Z TO A">Alphabetical, Z to A</option>
+                        </select>
+                    </div>
+                    <div class="landing__page--img">
+                        <img src="./assets/building.png" alt="building">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="footer">
+        </section>
+    </main>    
+    <footer>
         <div class="footer__container">
             <div class="footer__row">
                 <div class="footer__logo">
-                    <img class="footer__logo--img" src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/whitelogo.39850b27.png" alt="whitelogo">
+                    <img class="footer__logo--img" src="./assets/blinker_logo-white.png" alt="blinker logo white">
                 </div>
                 <div class="footer__copyright">
                     © 2026 Blinker.com.us. All rights reserved.
                 </div>
                 <div class="footer__social--links">
-                    <a class="footer__social--link" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="footer__social--link" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="footer__social--link" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="footer__social--link" href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="footer__social--link" href="#" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="footer__social--link" href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
 </body>
 </html>
