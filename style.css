@@ -169,6 +169,10 @@ button {
     margin-top: 32px;
 }
 
+.input__wrapper select:focus {
+    outline: none;
+}
+
 /* FOOTER */
 
 #footer {
@@ -216,3 +220,42 @@ button {
     color: #ff328f;
     transform: scale(1.2);
 }
+
+/* MEDIA */
+
+@media (max-width: 640px) {
+    .nav__links {
+        visibility: hidden;
+    }
+
+    .nav__link--primary {
+        visibility: visible;
+    }
+
+    .landing__page--title {
+        font-size: 48px;
+    }
+
+    .landing__page--para {
+        font-size: 24px;
+    }
+
+    .input__wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .input__wrapper input {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .input__wrapper select {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .landing__page--img img {
+        width: 100%;
+        max-width: 100%;
+    }
