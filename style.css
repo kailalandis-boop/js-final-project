@@ -37,25 +37,6 @@ button {
 
 /* NAVIGATION */
 
-.modal__icon {
-    display: none;
-    color: #6030b1;
-  }
-  
-  .x__icon {
-    display: none;
-    color: #6030b1;
-  }
-
-  .modal__menu--links {
-    display: none;
-  }
-
-.fa-bars {
-    height:25px;
-    width: 25px;
-  }
-
 .div {
     display: flex;
     justify-content: center;
@@ -129,6 +110,27 @@ ul {
     height: 40px;
     width: 150px
 }
+
+/* MODAL */
+
+.modal__icon {
+    display: none;
+    color: #6030b1;
+  }
+  
+.x__icon {
+    display: none;
+    color: #6030b1;
+  }
+
+.modal__menu--links {
+    display: none;
+  }
+
+.fa-bars {
+    height:25px;
+    width: 25px;
+  }
 
 /* LANDING PAGE */
 
