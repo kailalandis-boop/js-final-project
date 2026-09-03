@@ -39,6 +39,7 @@ button {
 
 .modal__icon {
     display: none;
+    opacity: 0;
   }
 
 .div {
@@ -262,6 +263,7 @@ ul {
 
     .modal__icon {
         display: block;
+        opacity: 1;
     }
 
     .landing__page--container {
