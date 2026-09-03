@@ -102,14 +102,14 @@ button {
 }
 
 .landing__page--title {
-    font-size: 60px;
+    font-size: 64px;
     font-weight: 600;
     margin-bottom: 60px;
     color: #6030b1;
 }
 
 .landing__page--para {
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 36px;
     font-weight: 600;
     text-transform: uppercase;
@@ -251,11 +251,11 @@ button {
     }
 
     .landing__page--para {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .input__wrapper input {
-        width: 380px;
+        width: 300px;
     }
 
     .landing__page--img img {
@@ -311,7 +311,7 @@ button {
     }
 
     .landing__page--title {
-        font-size: 52px;
+        font-size: 60px;
     }
 
     .landing__page--para {
