@@ -37,6 +37,10 @@ button {
 
 /* NAVIGATION */
 
+.fa-bars {
+    display: none;
+  }
+
 .div {
     display: flex;
     justify-content: center;
@@ -61,10 +65,28 @@ button {
     padding-left: 0px 80px;
 }
 
-.nav__link {
+ul {
+    list-style: none;
+    color: black;
+}
+
+.nav__link--anchor {
     text-decoration: none;
     color: black;
+}
+
+.nav__link--anchor--primary {
+    text-decoration: none;
+    color: white;
+}
+
+.nav__link {
     font-size: 18px;
+}
+
+.nav__link--anchor:hover {
+     color: #6030b1;
+     border-bottom: 2px solid #6030b1;
 }
 
 .nav__link:hover {
