@@ -115,6 +115,13 @@ button {
     text-transform: uppercase;
 }
 
+.input__filter--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
 .input__wrapper {
     display: flex;
     justify-content: center;
@@ -127,6 +134,7 @@ button {
     border-radius: 50px;
     border: 1px solid #6030b1;
     width: 450px;
+    font-size: 16px;
 }
 
 .input__wrapper input::placeholder {
@@ -144,6 +152,7 @@ button {
     color: #828282;
     cursor: pointer;
     appearance: none;
+    font-size: 16px;
 }
 
 .fa-magnifying-glass {
@@ -181,7 +190,7 @@ button {
 }
 
 .footer__container {
-    max-width: 1200px;
+    max-width: auto;
     background-color: #6030b1;
     color: white;
     padding: 36px 0px;
@@ -245,25 +254,8 @@ button {
         font-size: 14px;
     }
 
-    .input__wrapper {
-        flex-direction: row;
-        gap: 12px;
-        margin-bottom: 12px;
-    }
-
     .input__wrapper input {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .filter__wrapper {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .filter__wrapper select {
-        width: 100%;
-        justify-content: center;
+        width: 380px;
     }
 
     .landing__page--img img {
@@ -271,6 +263,7 @@ button {
         max-width: 100%;
     }
 }
+
 
 @media (max-width: 640px) {
     .nav__links {
@@ -293,25 +286,8 @@ button {
         font-size: 24px;
     }
 
-    .input__wrapper {
-        flex-direction: row;
-        gap: 12px;
-        margin-bottom: 12px;
-    }
-
-    .input__wrapper input {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .filter__wrapper {
+    .input__filter--container {
         flex-direction: column;
-        gap: 12px;
-    }
-
-    .filter__wrapper select {
-        width: 100%;
-        justify-content: center;
     }
 
     .landing__page--img img {
@@ -319,6 +295,7 @@ button {
         max-width: 100%;
     }
 }
+
 
 @media (max-width: 768px) {
     .nav__links {
@@ -338,28 +315,13 @@ button {
     }
 
     .landing__page--para {
-        font-size: 40px;
-    }
-
-    .landing__page--img img {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .landing__page--container {
-        padding: 0px 20px;
-    }
-    
-    .landing__page--title {
-        font-size: 60px;
-    }
-
-    .landing__page--para {
         font-size: 24px;
     }
-    
+
+    .input__filter--container {
+        flex-direction: column;
+    }
+
     .landing__page--img img {
         width: 100%;
         max-width: 100%;
