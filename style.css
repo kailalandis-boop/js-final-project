@@ -41,6 +41,15 @@ button {
     display: none;
     color: #6030b1;
   }
+  
+  .x__icon {
+    display: none;
+    color: #6030b1;
+  }
+
+  .modal__menu--links {
+    display: none;
+  }
 
 .fa-bars {
     height:25px;
@@ -263,7 +272,7 @@ ul {
 
 @media (max-width: 550px) {
     .nav__links {
-        visibility: hidden;
+        display: none;
     }
 
     .modal__icon {
@@ -296,7 +305,7 @@ ul {
 
 @media (max-width: 640px) {
     .nav__links {
-        visibility: hidden;
+        display: none;
     }
 
     .modal__icon {
@@ -333,7 +342,7 @@ ul {
 
 @media (max-width: 768px) {
     .nav__links {
-        visibility: hidden;
+        display: none;
     }
 
     .modal__icon {
