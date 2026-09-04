@@ -38,19 +38,28 @@ async function fetchAll() {
         const allCars = carsData.flat();
         const carsListEl = document.querySelector('.car-list');
 
-        carsListEl.innerHTML = allCars.map(car =>
-        `<div class="car-card">
-            <div class="car-card__container">
-                <p>${car.ModelYear}</p>
-                <p>${car.Make_Name}</p>
-                <p>${car.Model_Name}</p>
-            </div>
-        </div>`
-        ).join("");
-    }   
+        carsListEl.innerHTML = allCars.map(car => carHTML(car)).join("");
+    } 
         catch (error) {
         console.error('one of the API calls failed', error);
     }
 }
 
 fetchAll();
+
+function carHTML(car) {
+    return `<div class="car-card">
+        <div class="car-card__container">
+            <p>${car.ModelYear}</p>
+            <p>${car.Make_Name}</p>
+            <p>${car.Model_Name}</p>
+        </div>
+    </div>`;
+}
+
+const button = document.getElementById("homeBtn");
+
+button.addEventListener("click", function() {
+    // 3. Change the window location to your target HTML file
+    window.location.href = "about.html"; 
+});
