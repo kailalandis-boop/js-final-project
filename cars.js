@@ -29,18 +29,18 @@ async function fetchAll() {
     try {
         const cars = urls.map(url => fetch(url).then(res => res.json()));
         const carsData = await Promise.all(cars);
-        const carsListEl = document.querySelector('car-list');
-        console.log(carsData)
-        carsListEl.innerHTML = carsData.map(car => 
+        const allCars = carsData.flatMap(data => data.Results);
+        const carsListEl = document.querySelector('.car-list');
+
+        carsListEl.innerHTML = allCars.map(car =>
         `<div class="car-card">
             <div class="car-card__container">
-                <p>${car.ModelYear}:</p>
+                <p>${car.ModelYear}</p>
                 <p>${car.Make_Name}</p>
                 <p>${car.Model_Name}</p>
             </div>
         </div>`
-        )
-        .join("")
+        ).join("");
     }   
         catch (error) {
         console.error('one of the API calls failed', error);
