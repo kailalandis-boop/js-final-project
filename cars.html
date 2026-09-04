@@ -4,8 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Inventory</title>
+    <link rel="stylesheet" href="cars.css" />
+    <script defer src="cars.js"></script>
+    <script src="https://kit.fontawesome.com/1198d077a4.js"crossorigin="anonymous"></script>
 </head>
 <body>
-    
-</body>
+    <nav>
+      <div class="nav__container">
+        <div class="nav__row">
+          <div class="nav__logo">
+            <img class="logo" src="./assets/blinker_logo.png" alt="blinker logo"/>
+          </div>
+          <ul class="nav__links">
+            <li class="nav__link">
+              <a class="nav__link--anchor" href="#">Home</a>
+            </li>
+            <li class="nav__link">
+              <a class="nav__link--anchor" href="#">Find Your Car</a>
+            </li>
+            <li class="nav__link nav__link--primary">
+              <a class="nav__link--anchor--primary" href="#">Contact</a>
+            </li>
+          </ul> 
+          <button class="modal__icon" onclick="openMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="modal__menu">
+            <div class="modal__container">
+              <div class="x__icon" onclick="closeMenu()">
+                <i class="fa-solid fa-x"></i>
+              </div>
+              <div class="modal__menu--links">
+                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+                <a href="#" class="menu__link" onclick="closeMenu()">Find Your Car</a>
+                <a href="#" class="menu__link menu__link--primary" onclick="closeMenu()">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section id="landing__page">
+        <div class="landing__page--container">
+          <div class="landing__page--row">
+            <div class="landing__page--content">
+              <h1 class="landing__page--title">
+                Browse our cars
+              </h1>
+            </div>
+            <div class="input__filter--container">
+              <div class="input__wrapper">
+                <input type="text" class="input" placeholder="Search by make or model" aria-label="Search by make or model"/>
+                <button class="input__btn">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+              <div class="filter__wrapper">
+                <select id="filter" aria-label="Sort car results">
+                  <option value="NEW TO OLD">Newest to Oldest</option>
+                  <option value="OLD TO NEW">Oldest to Newest</option>
+                </select>
+              </div>
+            </div>
+            <div class="landing__page--img">
+              <img src="./assets/blinker_car.png" alt="car lot" />
+            </div>
+            <div class="car-list">
+                <div class="car">
+                    <div class="car-card">
+                        <div class="car-card__container">
+                            <p>Year:</p>
+                            <p>Make:</p>
+                            <p>Model:</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="footer__container">
+        <div class="footer__row">
+          <div class="footer__logo">
+            <img
+              class="footer__logo--img"
+              src="./assets/blinker_logo-white.png"
+              alt="blinker logo white"
+            />
+          </div>
+          <div class="footer__copyright">
+            © 2026 Blinker.com.us. All rights reserved.
+          </div>
+          <div class="footer__social--links">
+            <a class="footer__social--link" href="#" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="footer__social--link" href="#" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="footer__social--link" href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

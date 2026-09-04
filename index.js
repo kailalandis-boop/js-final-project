@@ -1,6 +1,3 @@
-// API: https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2015?format=json //
-// API: https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/toyota/modelyear/2020?format=json //
-
 function openMenu() {
     document.body.classList.add("menu--open");
 }
@@ -8,6 +5,7 @@ function openMenu() {
 function closeMenu() {
     document.body.classList.remove("menu--open");
 }
+
 
 
 
