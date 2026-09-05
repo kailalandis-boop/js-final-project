@@ -39,6 +39,8 @@ async function fetchAll() {
             })))
         );
 
+        carsListEl.innerHTML = '<p class="loading">Loading...</p>';
+
         const carsData = await Promise.all(cars);
         const allCars = carsData.flat();
 
@@ -53,9 +55,11 @@ async function fetchAll() {
         const sortOption = filterEl.value;
             if (sortOption === "NEW TO OLD") {
                 filteredCars.sort((a, b) => b.ModelYear - a.ModelYear);
-            } else if (sortOption === "OLD TO NEW") {
+            } 
+            else if (sortOption === "OLD TO NEW") {
                 filteredCars.sort((a, b) => a.ModelYear - b.ModelYear);
-}
+            }
+
         filterEl.addEventListener("change", () => {
             fetchAll();
         });
