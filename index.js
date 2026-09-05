@@ -14,6 +14,9 @@ function setSearchTerm(event) {
 }
 
 function routeToCarsPage() {
-  if(searchTerm === "") return;
-  window.location.href = `${window.location.origin}/cars.html?search=${searchTerm}`;
+  const searchTerm = document.querySelector(".input").value;
+
+  if (searchTerm === "") return;
+
+  window.location.href = `cars.html?search=${searchTerm}`;
 }

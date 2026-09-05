@@ -25,6 +25,10 @@ const urls = [
     { year: 2024, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/subaru/modelyear/2024?format=json'}
 ];
 
+const carsListEl = document.querySelector('.car-list');
+const searchInput = document.querySelector('.input');
+const resultsContainer = document.getElementById('results-container');
+
 async function fetchAll() {
     try {
         const cars = urls.map(car => fetch(car.url)
@@ -36,14 +40,23 @@ async function fetchAll() {
 
         const carsData = await Promise.all(cars);
         const allCars = carsData.flat();
-        const carsListEl = document.querySelector('.car-list');
+        
+        const params = new URLSearchParams(window.location.search);
+        const searchTerm = params.get("search").toLowerCase();
 
-        carsListEl.innerHTML = allCars.map(car => carHTML(car)).join("");
+        const filteredCars = allCars.filter(car =>
+            car.Make_Name.toLowerCase().includes(searchTerm) ||
+            car.Model_Name.toLowerCase().includes(searchTerm)
+        );
+
+        carsListEl.innerHTML = filteredCars.map(car => carHTML(car)).join("");
     } 
         catch (error) {
-        console.error('one of the API calls failed', error);
+        console.error('Error');
     }
 }
+
+fetchAll();
 
 function carHTML(car) {
     return `<div class="car-card">
@@ -54,11 +67,3 @@ function carHTML(car) {
         </div>
     </div>`;
 }
-
-const searchIcon = document.getElementById('input-icon');
-const searchInput = document.querySelector('.input');
-const resultsContainer = document.getElementById('results-container');
-
-searchIcon.addEventListener("click", () => {
-  fetchAll();
-});
