@@ -28,6 +28,7 @@ const urls = [
 const carsListEl = document.querySelector('.car-list');
 const searchInput = document.querySelector('.input');
 const resultsContainer = document.getElementById('results-container');
+const filterEl = document.getElementById("filter"); 
 
 async function fetchAll() {
     try {
@@ -49,10 +50,17 @@ async function fetchAll() {
             car.Model_Name.toLowerCase().includes(searchTerm)
         );
 
-        filteredCars.sort((a, b) => b.ModelYear - a.ModelYear);
-        filteredCars.sort((a, b) => a.ModelYear - b.ModelYear);
+        const sortOption = filterEl.value;
+            if (sortOption === "NEW TO OLD") {
+                filteredCars.sort((a, b) => b.ModelYear - a.ModelYear);
+            } else if (sortOption === "OLD TO NEW") {
+                filteredCars.sort((a, b) => a.ModelYear - b.ModelYear);
+}
+        filterEl.addEventListener("change", () => {
+            fetchAll();
+        });
 
-        const limitedCars = filteredCars.slice(0, 9);
+        const limitedCars = filteredCars.slice(0, 15);
 
         if (limitedCars.length === 0) {
             carsListEl.innerHTML = '<p class="no-results">No results match your search.</p>';
