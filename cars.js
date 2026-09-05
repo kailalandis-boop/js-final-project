@@ -57,7 +57,8 @@ function carHTML(car) {
 
 const searchIcon = document.getElementById('input-icon');
 const searchInput = document.querySelector('.input');
+const resultsContainer = document.getElementById('results-container');
 
 searchIcon.addEventListener("click", () => {
-    fetchAll();
+  fetchAll();
 });
