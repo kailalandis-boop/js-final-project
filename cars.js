@@ -57,6 +57,6 @@ function carHTML(car) {
     </div>`;
 }
 
-const inputIcon = document.getElementById('input-icon');
-
-console.log(inputIcon)
+const searchIcon = document.getElementById('input-icon');
+const searchInput = document.querySelector('.input');
+const resultsContainer = document.getElementById('results-container');
