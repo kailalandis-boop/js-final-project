@@ -48,10 +48,14 @@ async function fetchAll() {
             car.Make_Name.toLowerCase().includes(searchTerm) ||
             car.Model_Name.toLowerCase().includes(searchTerm)
         );
+
+        filteredCars.sort((a, b) => b.ModelYear - a.ModelYear);
+        filteredCars.sort((a, b) => a.ModelYear - b.ModelYear);
+
         const limitedCars = filteredCars.slice(0, 9);
 
         if (limitedCars.length === 0) {
-            carsListEl.innerHTML = "<p>No results match your search criteria.</p>";
+            carsListEl.innerHTML = '<p class="no-results">No results match your search.</p>';
         } else {
             carsListEl.innerHTML = limitedCars.map(car => carHTML(car)).join("");
         }
