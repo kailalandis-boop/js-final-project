@@ -299,8 +299,12 @@ p {
 
 /* FOOTER */
 
-#footer {
+.footer {
   padding: 0px 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer__container {
