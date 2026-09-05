@@ -57,9 +57,6 @@ function carHTML(car) {
     </div>`;
 }
 
-const button = document.getElementById("homeBtn");
+const inputIcon = document.getElementById('input-icon');
 
-button.addEventListener("click", function() {
-    // 3. Change the window location to your target HTML file
-    window.location.href = "about.html"; 
-});
+console.log(inputIcon)
