@@ -66,9 +66,9 @@ button {
 .x__icon {
   color: #FFF;
   position: absolute;
-  top: 5%;
+  top: 10%;
   transform: scale(1.5);
-  right: 10%;
+  right: 15%;
   transition: all 300ms ease;
 }
 .menu--open .modal__menu {
@@ -196,38 +196,14 @@ ul {
 .landing__page--title {
   font-size: 64px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: #6030b1;
 }
 
-.input__filter--container {
+.filter__container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-}
-
-.input__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-
-.input__wrapper input {
-  padding: 16px 24px;
-  border-radius: 50px;
-  border: 1px solid #6030b1;
-  width: 450px;
-  font-size: 16px;
-}
-
-.input__wrapper input::placeholder {
-  color: #828282;
-}
-
-.input:focus {
-  outline: none;
 }
 
 .filter__wrapper select {
@@ -238,34 +214,22 @@ ul {
   cursor: pointer;
   appearance: none;
   font-size: 16px;
+  transition: color 100ms ease-in-out; 
 }
 
-.fa-magnifying-glass {
-  color: white;
-  font-weight: 900;
+.filter__wrapper select:hover {
+  color: black;
+  border: 2px solid #6030b1;
 }
 
-.input__btn {
-  background-color: #6030b1;
-  border: 1px solid #6030b1;
-  padding: 16px 24px;
-  border-radius: 50px;
-  transition: background-color 0.3s ease;
-}
-
-.input__btn:hover {
-  background-color: #ff328f;
-  border: 1px solid #ff328f;
+.filter__wrapper select:focus {
+  outline: none;
 }
 
 .landing__page--img img {
   width: 50%;
   max-width: 1200px;
   margin-top: 24px;
-}
-
-.filter__wrapper select:focus {
-  outline: none;
 }
 
 .car {

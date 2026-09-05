@@ -24,10 +24,10 @@
           </div>
           <ul class="nav__links">
             <li class="nav__link">
-              <a class="nav__link--anchor" href="#">Home</a>
+              <a class="nav__link--anchor" href="index.html">Home</a>
             </li>
             <li class="nav__link">
-              <a class="nav__link--anchor" href="#">Find Your Car</a>
+              <a class="nav__link--anchor" href="cars.html">Find Your Car</a>
             </li>
             <li class="nav__link nav__link--primary">
               <a class="nav__link--anchor--primary" href="#">Contact</a>
@@ -60,26 +60,21 @@
                 America's most awarded car rental platform
               </h1>
               <p class="landing__page--para">
-                Reserve a car with <span class="purple">BLINKER</span>
+                Reserve a car with <span class="purple">Blinker</span>
               </p>
             </div>
-            <div class="input__filter--container">
+            <div class="input__container">
               <div class="input__wrapper">
                 <input
                   type="text"
                   class="input"
                   placeholder="Search by Make or Model"
                   aria-label="Search by make or model"
+                  onchange="setSearchTerm(event)"
                 />
-                <button class="input__btn">
+                <button class="input__btn" onclick="routeToCarsPage()">
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-              </div>
-              <div class="filter__wrapper">
-                <select id="filter" aria-label="Sort car results">
-                  <option value="NEW TO OLD">Newest to Oldest</option>
-                  <option value="OLD TO NEW">Oldest to Newest</option>
-                </select>
               </div>
             </div>
             <div class="landing__page--img">
