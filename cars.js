@@ -45,8 +45,6 @@ async function fetchAll() {
     }
 }
 
-fetchAll();
-
 function carHTML(car) {
     return `<div class="car-card">
         <div class="car-card__container">
@@ -59,4 +57,7 @@ function carHTML(car) {
 
 const searchIcon = document.getElementById('input-icon');
 const searchInput = document.querySelector('.input');
-const resultsContainer = document.getElementById('results-container');
+
+searchIcon.addEventListener("click", () => {
+    fetchAll();
+});
