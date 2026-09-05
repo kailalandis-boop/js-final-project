@@ -40,16 +40,21 @@ async function fetchAll() {
 
         const carsData = await Promise.all(cars);
         const allCars = carsData.flat();
-        
+
         const params = new URLSearchParams(window.location.search);
-        const searchTerm = params.get("search").toLowerCase();
+        const searchTerm = params.get("search")?.toLowerCase() || "";
 
         const filteredCars = allCars.filter(car =>
             car.Make_Name.toLowerCase().includes(searchTerm) ||
             car.Model_Name.toLowerCase().includes(searchTerm)
         );
+        const limitedCars = filteredCars.slice(0, 9);
 
-        carsListEl.innerHTML = filteredCars.map(car => carHTML(car)).join("");
+        if (limitedCars.length === 0) {
+            carsListEl.innerHTML = "<p>No results match your search criteria.</p>";
+        } else {
+            carsListEl.innerHTML = limitedCars.map(car => carHTML(car)).join("");
+        }
     } 
         catch (error) {
         console.error('Error');
