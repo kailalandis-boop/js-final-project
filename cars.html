@@ -20,10 +20,10 @@
               <a class="nav__link--anchor" href="index.html">Home</a>
             </li>
             <li class="nav__link">
-              <a class="nav__link--anchor" href="cars.html">Find Your Car</a>
+              <a class="nav__link--anchor" href="index.html">Find Your Car</a>
             </li>
             <li class="nav__link nav__link--primary">
-              <a class="nav__link--anchor--primary" href="#">Contact</a>
+              <a class="nav__link--anchor--primary" href="#footer">Connect</a>
             </li>
           </ul> 
           <button class="modal__icon" onclick="openMenu()">
@@ -36,8 +36,8 @@
               </div>
               <div class="modal__menu--links">
                 <a href="index.html" class="menu__link" onclick="closeMenu()">Home</a>
-                <a href="cars.html" class="menu__link" onclick="closeMenu()">Find Your Car</a>
-                <a href="#" class="menu__link menu__link--primary" onclick="closeMenu()">Contact</a>
+                <a href="index.html" class="menu__link" onclick="closeMenu()">Find Your Car</a>
+                <a href="#footer" class="menu__link menu__link--primary" onclick="closeMenu()">Connect</a>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
             </div>
             <div class="filter__container">
               <div class="filter__wrapper">
-                <select id="filter" aria-label="Sort car results">
+                <select id="filter" aria-label="Sort car results" onchange="sortCars(event)">
                   <option value="A TO Z">Alphabetical, A to Z</option>
                   <option value="Z TO A">Alphabetical, Z to A</option>
                 </select>
