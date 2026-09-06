@@ -45,6 +45,8 @@ async function fetchAll() {
                 filteredCars.sort((a, b) => {
             if (a.Model_Name < b.Model_Name) return -1;
             if (a.Model_Name > b.Model_Name) return 1;
+            if (a.Make_Name < b.Make_Name) return -1;
+            if (a.Make_Name > b.Make_Name) return 1;
             return 0;
             });
         } 
@@ -52,6 +54,8 @@ async function fetchAll() {
                 filteredCars.sort((a, b) => {
             if (a.Model_Name < b.Model_Name) return 1;
             if (a.Model_Name > b.Model_Name) return -1;
+            if (a.Make_Name < b.Make_Name) return 1;
+            if (a.Make_Name > b.Make_Name) return -1;
             return 0;
             });
         }
