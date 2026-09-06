@@ -46,16 +46,15 @@ async function fetchAll() {
             if (a.Model_Name < b.Model_Name) return -1;
             if (a.Model_Name > b.Model_Name) return 1;
             return 0;
-        });
-    } 
+            });
+        } 
             else if (sortOption === "Z TO A") {
                 filteredCars.sort((a, b) => {
             if (a.Model_Name < b.Model_Name) return 1;
             if (a.Model_Name > b.Model_Name) return -1;
             return 0;
-        });
-    }
-
+            });
+        }
         filterEl.addEventListener("change", () => {
             fetchAll();
         });
