@@ -7,22 +7,10 @@ function closeMenu() {
 }
 
 const urls = [
-    { year: 2015, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2015?format=json'},
-    { year: 2017, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2017?format=json'},
-    { year: 2019, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2019?format=json'},
-    { year: 2021, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2021?format=json'},
-    { year: 2016, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/toyota/modelyear/2016?format=json'},
-    { year: 2018, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/toyota/modelyear/2018?format=json'},
-    { year: 2022, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/toyota/modelyear/2022?format=json'},
-    { year: 2024, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/toyota/modelyear/2024?format=json'},
-    { year: 2017, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/lexus/modelyear/2017?format=json'},
-    { year: 2020, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/lexus/modelyear/2020?format=json'},
-    { year: 2023, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/lexus/modelyear/2023?format=json'},
-    { year: 2026, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/lexus/modelyear/2026?format=json'},
-    { year: 2015, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/subaru/modelyear/2015?format=json'},
-    { year: 2018, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/subaru/modelyear/2018?format=json'},
-    { year: 2021, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/subaru/modelyear/2021?format=json'},
-    { year: 2024, url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/subaru/modelyear/2024?format=json'}
+    'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2018?format=json',
+    'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/toyota/modelyear/2020?format=json',
+    'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/lexus/modelyear/2023?format=json',
+    'https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/subaru/modelyear/2026?format=json'
 ];
 
 const carsListEl = document.querySelector('.car-list');
@@ -35,7 +23,7 @@ async function fetchAll() {
         const cars = urls.map(car => fetch(car.url)
             .then(res => res.json())
             .then(data => data.Results.map(result => ({
-                ...result, ModelYear: car.year
+                ...result
             })))
         );
 
@@ -53,12 +41,20 @@ async function fetchAll() {
         );
 
         const sortOption = filterEl.value;
-            if (sortOption === "NEW TO OLD") {
-                filteredCars.sort((a, b) => b.ModelYear - a.ModelYear);
-            } 
-            else if (sortOption === "OLD TO NEW") {
-                filteredCars.sort((a, b) => a.ModelYear - b.ModelYear);
-            }
+            if (sortOption === "A TO Z") {
+                filteredCars.sort((a, b) => {
+            if (a.Model_Name < b.Model_Name) return -1;
+            if (a.Model_Name > b.Model_Name) return 1;
+            return 0;
+        });
+    } 
+            else if (sortOption === "Z TO A") {
+                filteredCars.sort((a, b) => {
+            if (a.Model_Name < b.Model_Name) return 1;
+            if (a.Model_Name > b.Model_Name) return -1;
+            return 0;
+        });
+    }
 
         filterEl.addEventListener("change", () => {
             fetchAll();
@@ -82,7 +78,6 @@ fetchAll();
 function carHTML(car) {
     return `<div class="car-card">
         <div class="car-card__container">
-            <p>${car.ModelYear}</p>
             <p>${car.Make_Name}</p>
             <p>${car.Model_Name}</p>
         </div>
